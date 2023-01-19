@@ -216,6 +216,7 @@
             this.btnStergere.TabIndex = 15;
             this.btnStergere.Text = "Ștergere angajați";
             this.btnStergere.UseVisualStyleBackColor = false;
+            this.btnStergere.Click += new System.EventHandler(this.btnStergere_Click);
             // 
             // button1
             // 

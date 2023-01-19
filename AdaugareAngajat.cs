@@ -1,9 +1,11 @@
+using System.Linq;
+using System.Collections;
+
 namespace ProiectMIP
 {
     public partial class AdaugareAngajat : Form
     {
         SalvareDate SalvareDate = new SalvareDate();
-
 
         public static AdaugareAngajat Instance = new AdaugareAngajat();
         public TextBox txtNum;
@@ -23,9 +25,12 @@ namespace ProiectMIP
 
         private void Salvare_Click(object sender, EventArgs e)
         {
+            //tratare exceptie
             try
             {
                 object listboxDepartament = lbDepartament.SelectedItem;
+
+                //salvare in baza de date
                 SalvareDate.sqlData("INSERT INTO Angajat(numeAngajat, prenumeAngajat, numeDepartament, nrTelefonAngajat) VALUES ('"
                               + txtNume.Text.Trim() + "','"
                               + txtPrenume.Text.Trim() + "','"
@@ -63,13 +68,25 @@ namespace ProiectMIP
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //colectie
             List<string> departamente = new List<string>();
+            
             departamente.Add("Resurse Umane");
             departamente.Add("Financiar");
             departamente.Add("Productie");
-            departamente.Add("Vanzari");
-            departamente.Add("HR");
-            lbDepartament.DataSource = departamente;
+            departamente.Add("Logistica");
+            departamente.Add("Marketing");
+            departamente.Add("Achizitii");
+            departamente.Add("Comercial");
+
+            lbDepartament.DataSource = departamente.OrderBy(x => x).ToList();
+        }
+
+        private void btnStergere_Click(object sender, EventArgs e)
+        {
+            StergereAngajat obj_stergereAngajat = new StergereAngajat();
+            this.Hide();
+            obj_stergereAngajat.Show();
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(numarareAngajat));
             this.dgSelectWhere = new System.Windows.Forms.DataGridView();
             this.txtNume = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,7 +40,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnInapoi = new System.Windows.Forms.Button();
             this.btnIesire = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgSelectWhere)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgSelectWhere
@@ -58,18 +61,19 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgSelectWhere.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgSelectWhere.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgSelectWhere.Location = new System.Drawing.Point(12, 178);
+            this.dgSelectWhere.Location = new System.Drawing.Point(12, 192);
             this.dgSelectWhere.Name = "dgSelectWhere";
             this.dgSelectWhere.ReadOnly = true;
             this.dgSelectWhere.RowHeadersWidth = 51;
             this.dgSelectWhere.RowTemplate.Height = 29;
-            this.dgSelectWhere.Size = new System.Drawing.Size(564, 247);
+            this.dgSelectWhere.Size = new System.Drawing.Size(589, 199);
             this.dgSelectWhere.TabIndex = 0;
+            this.dgSelectWhere.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSelectWhere_CellContentClick);
             // 
             // txtNume
             // 
             this.txtNume.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNume.Location = new System.Drawing.Point(293, 62);
+            this.txtNume.Location = new System.Drawing.Point(292, 78);
             this.txtNume.Name = "txtNume";
             this.txtNume.Size = new System.Drawing.Size(164, 34);
             this.txtNume.TabIndex = 1;
@@ -78,7 +82,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(26, 70);
+            this.label1.Location = new System.Drawing.Point(12, 78);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(261, 26);
             this.label1.TabIndex = 2;
@@ -88,7 +92,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(26, 118);
+            this.label2.Location = new System.Drawing.Point(12, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(377, 26);
             this.label2.TabIndex = 4;
@@ -97,9 +101,9 @@
             // btnCautaNume
             // 
             this.btnCautaNume.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCautaNume.Location = new System.Drawing.Point(463, 62);
+            this.btnCautaNume.Location = new System.Drawing.Point(477, 78);
             this.btnCautaNume.Name = "btnCautaNume";
-            this.btnCautaNume.Size = new System.Drawing.Size(101, 34);
+            this.btnCautaNume.Size = new System.Drawing.Size(90, 34);
             this.btnCautaNume.TabIndex = 5;
             this.btnCautaNume.Text = "Caută";
             this.btnCautaNume.UseVisualStyleBackColor = true;
@@ -110,7 +114,7 @@
             this.btnDepartament.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnDepartament.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDepartament.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDepartament.Location = new System.Drawing.Point(409, 112);
+            this.btnDepartament.Location = new System.Drawing.Point(477, 131);
             this.btnDepartament.Name = "btnDepartament";
             this.btnDepartament.Size = new System.Drawing.Size(90, 38);
             this.btnDepartament.TabIndex = 6;
@@ -143,9 +147,9 @@
             // 
             this.btnInapoi.BackColor = System.Drawing.Color.Silver;
             this.btnInapoi.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnInapoi.Location = new System.Drawing.Point(12, 457);
+            this.btnInapoi.Location = new System.Drawing.Point(628, 221);
             this.btnInapoi.Name = "btnInapoi";
-            this.btnInapoi.Size = new System.Drawing.Size(87, 45);
+            this.btnInapoi.Size = new System.Drawing.Size(148, 45);
             this.btnInapoi.TabIndex = 23;
             this.btnInapoi.Text = "Înapoi";
             this.btnInapoi.UseVisualStyleBackColor = false;
@@ -156,20 +160,31 @@
             this.btnIesire.BackColor = System.Drawing.Color.Red;
             this.btnIesire.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnIesire.ForeColor = System.Drawing.Color.Transparent;
-            this.btnIesire.Location = new System.Drawing.Point(477, 457);
+            this.btnIesire.Location = new System.Drawing.Point(628, 286);
             this.btnIesire.Name = "btnIesire";
-            this.btnIesire.Size = new System.Drawing.Size(99, 45);
+            this.btnIesire.Size = new System.Drawing.Size(148, 45);
             this.btnIesire.TabIndex = 24;
             this.btnIesire.Text = "Ieșire";
             this.btnIesire.UseVisualStyleBackColor = false;
             this.btnIesire.Click += new System.EventHandler(this.btnIesire_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(607, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(183, 162);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
             // 
             // numarareAngajat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(598, 514);
+            this.ClientSize = new System.Drawing.Size(788, 433);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnIesire);
             this.Controls.Add(this.btnInapoi);
             this.Controls.Add(this.lblPersoana);
@@ -185,6 +200,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CautareAngajat";
             ((System.ComponentModel.ISupportInitialize)(this.dgSelectWhere)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,5 +218,6 @@
         private Label label6;
         private Button btnInapoi;
         private Button btnIesire;
+        private PictureBox pictureBox1;
     }
 }

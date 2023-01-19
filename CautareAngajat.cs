@@ -28,6 +28,8 @@ namespace ProiectMIP
             DataTable dt = new DataTable();
             dt = Cautare.sqlData("select numeAngajat, prenumeAngajat, numeDepartament from Angajat where numeDepartament = '" + txtNume.Text.Trim() + "'");
             dgSelectWhere.DataSource = dt;
+
+            //tratare exceptie
             if (dt.Rows.Count == 0)
                 MessageBox.Show("Nu exista angajati in acest departament!");
         }
@@ -37,6 +39,8 @@ namespace ProiectMIP
             DataTable dt = new DataTable();
             dt = Cautare.sqlData("select count(numeDepartament) as 'Numar angajati din departament', numeDepartament from Angajat group by numedepartament");//+ txtDepartament.Text.Trim() + "'");
             dgSelectWhere.DataSource = dt;
+
+            //tratare exceptie
             if (dt.Rows.Count ==0 )
                 MessageBox.Show("Nu exista angajati in departamentul cautat!");
         }
@@ -52,6 +56,11 @@ namespace ProiectMIP
         {
             this.Close();
             Environment.Exit(0);
+        }
+
+        private void dgSelectWhere_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

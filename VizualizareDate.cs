@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace ProiectMIP
 {
+    //mostenire
    internal class VizualizareDate : SalvareDate
     {
         static SalvareDate SalvareDate = new SalvareDate();
